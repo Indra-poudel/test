@@ -1,174 +1,186 @@
-@each $color,
-$value in $theme-colors {
-    .ant-btn-#{$color} {
-        @include button-variant($value, $value);
-        &.disabled,
-        &:disabled {
-            opacity: $btn-disabled-opacity;
-        }
-        &:disabled:hover,
-        &:disabled:focus,
-        &:disabled:active {
-            color: color-yiq($value);
-            background-color: $value;
-            border-color: $value;
-        }
+@each $color, $value in $theme-colors {
+  .ant-btn-#{$color} {
+    @include button-variant($value, $value);
+    &.disabled,
+    &:disabled {
+      opacity: $btn-disabled-opacity;
     }
+    &:disabled:hover,
+    &:disabled:focus,
+    &:disabled:active {
+      color: color-yiq($value);
+      background-color: $value;
+      border-color: $value;
+    }
+  }
 }
 
-@each $color,
-$value in $theme-colors {
-    .ant-btn-outline-#{$color} {
-        @include button-outline-variant($value);
-    }
+@each $color, $value in $theme-colors {
+  .ant-btn-outline-#{$color} {
+    @include button-outline-variant($value);
+  }
 }
 .btn-round {
-    border-radius: $border-radius-rounded;
-    padding-left: $input-btn-padding-x * 1.25;
-    padding-right: $input-btn-padding-x * 1.25;
-    &.btn-lg {
-        border-radius: $border-radius-rounded-lg;
-        padding-left: $input-btn-padding-x-lg * 1.25;
-        padding-right: $input-btn-padding-x-lg * 1.25;
-    }
-    &.btn-sm {
-        border-radius: $border-radius-rounded-sm;
-        padding-left: $input-btn-padding-x-sm * 1.25;
-        padding-right: $input-btn-padding-x-sm * 1.25;
-    }
+  border-radius: $border-radius-rounded;
+  padding-left: $input-btn-padding-x * 1.25;
+  padding-right: $input-btn-padding-x * 1.25;
+  &.btn-lg {
+    border-radius: $border-radius-rounded-lg;
+    padding-left: $input-btn-padding-x-lg * 1.25;
+    padding-right: $input-btn-padding-x-lg * 1.25;
+  }
+  &.btn-sm {
+    border-radius: $border-radius-rounded-sm;
+    padding-left: $input-btn-padding-x-sm * 1.25;
+    padding-right: $input-btn-padding-x-sm * 1.25;
+  }
 }
 .btn {
-    min-width: 126px;
-    text-align: center;
+  min-width: 126px;
+  text-align: center;
 }
 .btn.transparent,
 .btn.btn-link,
 .btn.ant-btn-link,
 .btn.btn-sm {
-    min-width: initial;
+  min-width: initial;
 }
 .btn-mw {
-    min-width: 126px;
-    text-align: center;
+  min-width: 126px;
+  text-align: center;
 
-    &.btn-lg {
-        min-width: 196px;
-    }
+  &.btn-lg {
+    min-width: 196px;
+  }
 
-    &.btn-sm {
-        min-width: 96px;
-    }
+  &.btn-sm {
+    min-width: 96px;
+  }
 }
 
 // Extra padding left and right
 .btn.btn-px,
 .ant-btn.btn-px {
-    padding-left: $input-btn-padding-x * 1.5;
-    padding-right: $input-btn-padding-x * 1.5;
+  padding-left: $input-btn-padding-x * 1.5;
+  padding-right: $input-btn-padding-x * 1.5;
 
-    &.btn-lg {
-        padding-left: $input-btn-padding-x-lg * 1.5;
-        padding-right: $input-btn-padding-x-lg * 1.5;
-    }
+  &.btn-lg {
+    padding-left: $input-btn-padding-x-lg * 1.5;
+    padding-right: $input-btn-padding-x-lg * 1.5;
+  }
 
-    &.btn-sm {
-        padding-left: $input-btn-padding-x-sm * 1.5;
-        padding-right: $input-btn-padding-x-sm * 1.5;
-    }
+  &.btn-sm {
+    padding-left: $input-btn-padding-x-sm * 1.5;
+    padding-right: $input-btn-padding-x-sm * 1.5;
+  }
 }
 
 .btn-link {
-    @include hover-focus() {
-        box-shadow: none;
-        text-decoration: underline;
-    }
+  @include hover-focus() {
+    box-shadow: none;
+    text-decoration: underline;
+  }
 }
 
 .ant-btn-round {
-    height: initial;
+  height: initial;
 }
 .ant-btn-link {
-    @extend .btn-link;
-    &:not([disabled]) span{
-        @include hover-focus() {
-            box-shadow: none;
-            text-decoration: underline;
-        }
+  @extend .btn-link;
+  &:not([disabled]) span {
+    @include hover-focus() {
+      box-shadow: none;
+      text-decoration: underline;
     }
+  }
 }
 .ant-btn {
+  height: initial;
+  font-weight: $btn-font-weight;
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+  border-radius: $border-radius;
+  padding: $input-btn-padding-y $input-btn-padding-x;
+  box-shadow: none;
+  &.ant-btn-round {
     height: initial;
-    font-weight: $btn-font-weight;
-    font-size: $font-size-base;
-    font-family: $font-family-base;
-    line-height: $line-height-base;
-    border-radius: $border-radius;
-    padding: $input-btn-padding-y $input-btn-padding-x;
-    box-shadow: none;
+    border-radius: $border-radius-rounded;
+    padding: $input-btn-padding-y ($input-btn-padding-x * 1.5);
+  }
+  &.ant-btn-sm {
+    height: initial;
+    @extend .btn-sm;
+
     &.ant-btn-round {
-        height: initial;
-        border-radius: $border-radius-rounded;
-        padding: $input-btn-padding-y ($input-btn-padding-x * 1.5);
+      height: initial;
+      border-radius: $border-radius-rounded-sm;
+      padding: $input-btn-padding-y-sm ($input-btn-padding-x-sm * 1.5);
     }
-    &.ant-btn-sm {
-        height: initial;
-        @extend .btn-sm;
+  }
+  &.ant-btn-lg {
+    height: initial;
+    @extend .btn-lg;
 
-        &.ant-btn-round {
-            height: initial;
-            border-radius: $border-radius-rounded-sm;
-            padding: $input-btn-padding-y-sm ($input-btn-padding-x-sm * 1.5);
-        }
+    &.ant-btn-round {
+      height: initial;
+      border-radius: $border-radius-rounded-lg;
+      padding: $input-btn-padding-y-lg ($input-btn-padding-x-lg * 1.5);
     }
-    &.ant-btn-lg {
-        height: initial;
-        @extend .btn-lg;
-
-        &.ant-btn-round {
-            height: initial;
-            border-radius: $border-radius-rounded-lg;
-            padding: $input-btn-padding-y-lg ($input-btn-padding-x-lg * 1.5);
-        }
-    }
+  }
 }
 
 .btn-shadow {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
 }
 .btn-white {
-    color: $primary;
+  color: $primary;
 
-    &:hover,
-    &:focus {
-        color: $primary;
-    }
+  &:hover,
+  &:focus {
+    color: $primary;
+  }
 }
 .review-agreement-btn {
-    font-size: 22px;
-    line-height: 33px;
-    font-weight: 600;
-    text-decoration: underline;
+  font-size: 22px;
+  line-height: 33px;
+  font-weight: 600;
+  text-decoration: underline;
 
-    @include media-breakpoint-down(xs) {
-        font-size: 16px;
-        font-weight: 500;
-    }
+  @include media-breakpoint-down(xs) {
+    font-size: 16px;
+    font-weight: 500;
+  }
 }
 
 @each $breakpoint in map-keys($grid-breakpoints) {
-    @include media-breakpoint-up($breakpoint) {
-        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-        .btn#{$infix}-inline-block {
-            display: inline-block;
-            width: initial;
-        }
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    .btn#{$infix}-inline-block {
+      display: inline-block;
+      width: initial;
     }
+  }
 }
 
 // Miscellaneous rules
 .apply-now-btn {
-    @include media-breakpoint-down(md) {
-        width: 230px;
-        box-shadow: none;
-    }
+  @include media-breakpoint-down(md) {
+    width: 230px;
+    box-shadow: none;
+  }
+}
+
+.btn-black {
+  background-color: $dark;
+  border: none;
+  &:hover,
+  &:focus {
+    background-color: $black;
+  }
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
 }

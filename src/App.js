@@ -1,7 +1,7 @@
-import React from 'react';
-import './App.scss';
+import React from "react";
+import "./index.scss";
 import RouteLinks from "./router";
-import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 
 function App() {
   return (
@@ -12,4 +12,3 @@ function App() {
 }
 
 export default App;
-

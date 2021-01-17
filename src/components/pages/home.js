@@ -1,21 +1,29 @@
-import FormComponent from "../organisms/form";
-import { Container } from 'reactstrap';
-import logo from '../../logo.svg';
+import { Container } from "reactstrap";
+import { React, useState } from "react";
 
+import Button from "../common/button";
+import { BUTTON_TYPE } from "../../constant/constant";
+import AvailableConnectionModal from "../availableConnectionModal";
 
-const Home = (props) => {
-    return (
-        <Container className="mt-5">
-            <div className="App">
-                <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h2>{'Welcome to React'}</h2>
-                    <FormComponent />
-                </div>
-            </div>
-        </Container>
-    );
-}
+const Home = () => {
+  const [isModalOpen, setModalOpen] = useState(true);
 
+  const toggleModal = () => setModalOpen((prevState) => !prevState);
 
-export default (Home);
+  return (
+    <Container className="mt-5">
+      <Button
+        type={BUTTON_TYPE.PRIMARY}
+        outlined
+        onClick={toggleModal}
+        buttonText={"Click to toggle Available connection Modal"}
+      />
+      <AvailableConnectionModal
+        isModalOpen={isModalOpen}
+        onToggleModal={toggleModal}
+      />
+    </Container>
+  );
+};
+
+export default Home;

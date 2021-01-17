@@ -1,15 +1,73 @@
 .modal-title {
-    font-size: 28px;
-    line-height: 1.34;
-    font-weight: 600;
-    color: $body-color;
+  font-size: 28px;
+  line-height: 1.34;
+  font-weight: 600;
+  color: $body-color;
 }
 .modal-content {
-    box-shadow: $box-shadow;
+  box-shadow: $box-shadow;
 }
 .modal-body {
-    padding: $modal-header-padding-y/2 $modal-header-padding-x $modal-header-padding-y;
+  padding: $modal-header-padding-y/2 $modal-header-padding-x
+    $modal-header-padding-y;
 }
 .modal-footer {
-    padding: $modal-header-padding-y/2 $modal-header-padding-x $modal-header-padding-y;
+  padding: $modal-header-padding-y/2 $modal-header-padding-x
+    $modal-header-padding-y;
+}
+
+.modal-header {
+  @extend .modal-title;
+  padding: 42px 34px 0px;
+  line-height: 120.4%;
+  font-weight: 600;
+  font-size: 38px;
+}
+
+.modal-body {
+  padding: 40px 15px 0px;
+
+  .available-connection-item-wrapper {
+    max-height: 414px;
+    overflow: auto;
+    padding-left: 10px;
+  }
+
+  .available-connection-item {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px 4px rgba(151, 151, 151, 0.25);
+  }
+  .available-connection-item-title {
+    display: flex;
+    font-size: 24px;
+    font-weight: 600;
+    color: $body-color;
+    text-transform: uppercase;
+
+    div {
+      padding-right: 18px;
+    }
+  }
+}
+
+.modal-footer {
+  padding: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .left-button-groups {
+    .btn {
+      margin-right: 12px;
+    }
+  }
+
+  .right-button {
+    margin-right: 30px;
+  }
 }
